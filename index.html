@@ -5,10 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>hi hello</title>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <!-- Add the link to particles.js CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.css">
 </head>
 
-<body>
+<body style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0;">
+
+    <!-- Add a container for particles.js -->
+    <div id="particles-js"></div>
+
     <h1>hi</h1>
 
     <h2>hello</h2>
@@ -18,22 +24,31 @@
     <!-- Add body text with link to privacy policy -->
     <p>For more information, check our <a href="privacypolicy.html">Privacy Policy</a>.</p>
 
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3709021518497874"
-        crossorigin="anonymous"></script>
+    <!-- Add the script tag for particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
-    <div id="particles-js"></div>
-
+    <!-- Initialize particles.js with your custom configuration -->
     <script>
-        particlesJS('particles-js', {
-            particles: {
-                // ... (previous particle configuration)
-            },
-            interactivity: {
-                // ... (previous interactivity configuration)
-            },
-            retina_detect: true
+        particlesJS("particles-js", {
+            "particles": {
+                // Customize particle settings as needed
+                "number": {
+                    "value": 80,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#ffffff"
+                },
+                // Add more particle settings as needed
+            }
         });
     </script>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3709021518497874"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
