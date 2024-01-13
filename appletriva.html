@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Apple Trivia Quiz</title>
+<style>
+body {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+h1 {
+  margin-top: 50px;
+  font-size: 36px;
+}
+
+.question {
+  margin-top: 30px;
+  font-size: 24px;
+}
+
+.options {
+  margin-top: 20px;
+}
+
+.option {
+  margin-right: 15px;
+  padding: 10px 20px;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.correct {
+  background-color: #81b53e;
+  color: white;
+}
+
+.incorrect {
+  background-color: #e54d42;
+  color: white;
+}
+
+.feedback {
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.score {
+  margin-top: 30px;
+  font-size: 24px;
+}
+</style>
+</head>
+<body>
+<h1>Apple Trivia Quiz</h1>
+
+<div class="question" id="question-container"></div>
+<div class="options" id="options-container"></div>
+<div class="feedback" id="feedback"></div>
+<div class="score" id="score">Score: 0</div>
+
+<script>
+const questions = [
+  {
+    question: "What was the first-ever iPhone model called?",
+    answers: ["iPhone X", "iPhone 5", "iPhone", "iPhone 3G"],
+    correctAnswer: "iPhone",
+  },
+  {
+    question: "Which Apple co-founder is known as the 'Father of the Macintosh'?",
+    answers: ["Steve Jobs", "Steve Wozniak", "Ronald Wayne", "John Scully"],
+    correctAnswer: "Steve Wozniak",
+  },
+  {
+    question: "What was the name of the first Macintosh computer?",
+    answers: ["Macintosh 128K", "Macintosh Plus", "Macintosh SE", "Macintosh II"],
+    correctAnswer: "Macintosh 128K",
+  },
+  {
+    question: "What year was the first iPad released?",
+    answers: ["2007", "2010", "2011", "2012"],
+    correctAnswer: "2010",
+  },
+  {
+    question: "What is the name of Apple's current operating system for Macs?",
+    answers: ["macOS", "iOS", "iPadOS", "watchOS"],
+    correctAnswer: "macOS",
+  },
+];
+
+let currentQuestion = 0;
+let score = 0;
+
+function displayQuestion() {
+  const question = questions[currentQuestion];
+  const questionContainer = document.getElementById("question-container");
+  const optionsContainer = document.getElementById("options-container");
+  const feedbackContainer = document.getElementById("feedback");
+
+  questionContainer.textContent = question.question;
+  optionsContainer.innerHTML = "";
+
+  question.answers.forEach((answer, index) => {
+    const option = document.createElement("button");
+    option.classList.add("option");
+    option.textContent = answer;
+    option.addEventListener("click", () => {
+      checkAnswer(index);
+    });
+    optionsContainer.appendChild(option);
+  });
+
+  feedbackContainer.textContent = "";
+}
+
+function checkAnswer(selectedAnswer) {
+  const question = questions[currentQuestion];
+  const feedbackContainer = document.getElementById("feedback");
+
+  if (question.answers[selectedAnswer] === question.correctAnswer) {
+    score++;
+    document.getElementById("score").textContent = `Score: ${score}`;
+    feedbackContainer.textContent = "Correct!";
+  } else {
+    feedbackContainer.textContent = `Incorrect. The correct answer is ${question.correctAnswer}.`;
+  }
