@@ -1,1 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia</title>
+    <!-- Include particles.js library -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        #particles-js {
+            height: 100vh;
+        }
+
+        h1 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-family: 'Arial', sans-serif;
+        }
+
+        button {
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        h2 {
+            position: absolute;
+            top: 80%;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-family: 'Arial', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Particles container -->
+    <div id="particles-js"></div>
+
+    <h1>Trivia</h1>
+
+    <button onclick="redirectToAppleTrivia()">Go to Apple Trivia</button>
+    <button onclick="backToHome()">Back to Home</button>
+
+    <h2>Forms</h2>
+
+    <script>
+        function redirectToAppleTrivia() {
+            window.location.href = "appletrivia.html";
+        }
+
+        function backToHome() {
+            window.location.href = "index.html";
+        }
+
+        // Particles.js configuration
+        particlesJS("particles-js", {
+            particles: {
+                // Particle configuration
+                // ...
+            },
+            interactivity: {
+                // Interactivity configuration
+                // ...
+            }
+        });
+    </script>
+</body>
+
+</html>
