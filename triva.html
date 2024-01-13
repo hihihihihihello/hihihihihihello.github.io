@@ -5,16 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trivia</title>
-    <!-- Include particles.js library -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <style>
         body {
             margin: 0;
             overflow: hidden;
-        }
-
-        #particles-js {
-            height: 100vh;
         }
 
         h1 {
@@ -32,8 +26,8 @@
             left: 50%;
             transform: translateX(-50%);
             padding: 10px 20px;
-            background-color: #3498db;
-            color: white;
+            background-color: #3498db; /* Dark Blue */
+            color: #ecf0f1; /* Light Blue */
             border: none;
             cursor: pointer;
         }
@@ -50,9 +44,6 @@
 </head>
 
 <body>
-    <!-- Particles container -->
-    <div id="particles-js"></div>
-
     <h1>Trivia</h1>
 
     <button onclick="redirectToAppleTrivia()">Go to Apple Trivia</button>
@@ -68,18 +59,6 @@
         function backToHome() {
             window.location.href = "index.html";
         }
-
-        // Particles.js configuration
-        particlesJS("particles-js", {
-            particles: {
-                // Particle configuration
-                // ...
-            },
-            interactivity: {
-                // Interactivity configuration
-                // ...
-            }
-        });
     </script>
 </body>
 
