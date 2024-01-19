@@ -16,9 +16,9 @@
     <div id="particles-js"></div>
 
     <h1 style="color: white;">hi</h1>
-
-    <!-- Add a button to toggle background color -->
-    <button onclick="toggleBackgroundColor()" style="color: white;">Toggle Background</button>
+    
+    <!-- Add a button with the desired text and link -->
+    <button onclick="window.location.href='triva.html'" style="color: white;">triva</button>
 
     <h2 style="color: white;">hello</h2>
 
@@ -26,7 +26,7 @@
 
     <!-- Add a button with the desired text and link -->
     <button onclick="window.location.href='privacypolicy.html'" style="color: white;">privacy policy</button>
-
+    
     <!-- Add a button with the desired text and link -->
     <button onclick="window.location.href='terms.html'" style="color: black;">terms</button>
 
@@ -51,20 +51,51 @@
                 // Add more particle settings as needed
             }
         });
-
-        // Function to toggle background color
-        function toggleBackgroundColor() {
-            const body = document.body;
-            const currentColor = getComputedStyle(body).backgroundColor;
-            const newColor = currentColor === 'rgb(0, 0, 0)' ? 'white' : 'black';
-            body.style.backgroundColor = newColor;
-
-            // Update text and button colors based on the new background color
-            updateColors();
-        }
     </script>
 
-    <!-- Rest of your HTML code -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3709021518497874"
+        crossorigin="anonymous"></script>
+        
+    <!-- Add a button with the desired text and link -->
+    <button onclick="window.location.href='https://github.com/hihihihihihello/hihihihihihello.github.io.wiki.git'" style="color: white;">GitHub Wiki</button>
+    
+    <!-- Add a button with the desired text and link -->
+    <button onclick="window.location.href='stuff.html'" style="color: white;">stuff</button>
+    
+    <!-- Add a button with the desired text and link -->
+    <button onclick="window.location.href='https://www.peadrew.tk/'" style="color: white;">The Peadrew Project</button>
+    
+    <!-- Add a button with the desired text and link -->
+    <button onclick="window.location.href='https://guides.peadrew.tk/'" style="color: white;">Peadrew Guides</button>
+    
+<script>
+    // Function to determine if a color is light or dark
+    function isLight(color) {
+        const rgb = color.match(/\d+/g);
+        const brightness = (rgb[0] * 299 + rgb[1] * 587 + rgb[2] * 114) / 1000;
+        return brightness > 128; // You can adjust this threshold as needed
+    }
+
+    // Function to set text and button colors based on background
+    function updateColors() {
+        const body = document.body;
+        const textColor = isLight(getComputedStyle(body).backgroundColor) ? 'black' : 'white';
+        const buttonColor = textColor === 'white' ? 'black' : 'white';
+
+        // Set text color for all elements with inline styles
+        document.querySelectorAll('[style*="color: white;"]').forEach(element => {
+            element.style.color = textColor;
+        });
+
+        // Set button color for all buttons
+        document.querySelectorAll('button').forEach(button => {
+            button.style.color = buttonColor;
+        });
+    }
+
+    // Call the updateColors function when the DOM is loaded
+    document.addEventListener('DOMContentLoaded', updateColors);
+</script>
 
 </body>
 
