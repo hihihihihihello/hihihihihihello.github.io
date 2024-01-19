@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hi hello</title>
+
+    <!-- Add the link to particles.js CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.css">
+</head>
+
+<body style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; background-color: black; color: white;">
+
+    <!-- Add a container for particles.js -->
+    <div id="particles-js"></div>
+
+    <h1 style="color: white;">hi</h1>
+
+    <!-- Add a button to toggle background color -->
+    <button onclick="toggleBackgroundColor()" style="color: white;">Toggle Background</button>
+
+    <h2 style="color: white;">hello</h2>
+
+    <h3 style="color: white;"><a href="about.html">about</a></h3>
+
+    <!-- Add a button with the desired text and link -->
+    <button onclick="window.location.href='privacypolicy.html'" style="color: white;">privacy policy</button>
+
+    <!-- Add a button with the desired text and link -->
+    <button onclick="window.location.href='terms.html'" style="color: black;">terms</button>
+
+    <!-- Add the script tag for particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <!-- Initialize particles.js with your custom configuration -->
+    <script>
+        particlesJS("particles-js", {
+            "particles": {
+                // Customize particle settings as needed
+                "number": {
+                    "value": 80,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#ffffff"
+                },
+                // Add more particle settings as needed
+            }
+        });
+
+        // Function to toggle background color
+        function toggleBackgroundColor() {
+            const body = document.body;
+            const currentColor = getComputedStyle(body).backgroundColor;
+            const newColor = currentColor === 'rgb(0, 0, 0)' ? 'white' : 'black';
+            body.style.backgroundColor = newColor;
+
+            // Update text and button colors based on the new background color
+            updateColors();
+        }
+    </script>
+
+    <!-- Rest of your HTML code -->
+
+</body>
+
+</html>
