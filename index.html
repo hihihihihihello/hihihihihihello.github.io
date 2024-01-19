@@ -68,6 +68,35 @@
     <!-- Add a button with the desired text and link -->
     <button onclick="window.location.href='https://guides.peadrew.tk/'" style="color: white;">Peadrew Guides</button>
     
+<script>
+    // Function to determine if a color is light or dark
+    function isLight(color) {
+        const rgb = color.match(/\d+/g);
+        const brightness = (rgb[0] * 299 + rgb[1] * 587 + rgb[2] * 114) / 1000;
+        return brightness > 128; // You can adjust this threshold as needed
+    }
+
+    // Function to set text and button colors based on background
+    function updateColors() {
+        const body = document.body;
+        const textColor = isLight(getComputedStyle(body).backgroundColor) ? 'black' : 'white';
+        const buttonColor = textColor === 'white' ? 'black' : 'white';
+
+        // Set text color for all elements with inline styles
+        document.querySelectorAll('[style*="color: white;"]').forEach(element => {
+            element.style.color = textColor;
+        });
+
+        // Set button color for all buttons
+        document.querySelectorAll('button').forEach(button => {
+            button.style.color = buttonColor;
+        });
+    }
+
+    // Call the updateColors function when the DOM is loaded
+    document.addEventListener('DOMContentLoaded', updateColors);
+</script>
+
 </body>
 
 </html>
