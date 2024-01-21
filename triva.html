@@ -9,6 +9,9 @@
         body {
             margin: 0;
             overflow: hidden;
+            text-align: center;
+            background-color: black;
+            color: white; /* Set the text color to white */
         }
 
         h1 {
@@ -21,14 +24,13 @@
         }
 
         button {
-            position: absolute;
-            top: 70%;
-            left: 50%;
-            transform: translateX(-50%);
+            display: inline-block;
+            margin: 0 10px;
             padding: 10px 20px;
-            background-color: #3498db; /* Dark Blue */
-            color: #ecf0f1; /* Light Blue */
+            background-color: #3498db;
+            color: #ecf0f1;
             border: none;
+            border-radius: 20px;
             cursor: pointer;
         }
 
@@ -46,17 +48,9 @@
 <body>
     <h1>Trivia</h1>
 
-    <button onclick="appletriva.html()">apple appl</button>
-    <button onclick="index.html()">Back to Home</button>
-
-    <!-- Add a button with the desired text and link -->
-    <button onclick="window.location.href='index.html'" style="color: white;">go back</button>
-    
-    <!-- Add a button with the desired text and link -->
-    <button onclick="window.location.href='trivas.html'" style="color: white;">go to the trivas page</button>
-
-    <!-- Add a button with the desired text and link -->
-    <button onclick="window.location.href='appletrica.html'" style="color: white;">apple triva</button>
+    <button onclick="redirectToAppleTrivia()">Apple Trivia</button>
+    <button onclick="backToHome()">Back to Home</button>
+    <button onclick="window.location.href='trivas.html'">Go to Trivas Page</button>
 
     <h2>Forms</h2>
 
