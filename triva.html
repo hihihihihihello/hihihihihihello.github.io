@@ -46,21 +46,34 @@
 </head>
 
 <body>
-    <h1>Trivia</h1>
+    <h1>Tests</h1>
+
+    <button onclick="backToHome()">Back to Home</button>
 
     <h2>Forms</h2>
 
+    <button onclick="goToformmativeformativesummativesumative()">Formmative Formative Summative Sumative</button>
+    <button onclick="goToTrivias()">Trivias</button>
+
+    <h3>A Quiz</h2>
+    
     <button onclick="redirectToAppleTrivia()">Apple Trivia</button>
-    <button onclick="backToHome()">Back to Home</button>
-    <button onclick="window.location.href='trivas.html'">Go to Trivas Page</button>
 
     <script>
+        function backToHome() {
+            window.location.href = "index.html";
+        }
+        
         function redirectToAppleTrivia() {
             window.location.href = "appletrivia.html";
         }
 
-        function backToHome() {
-            window.location.href = "index.html";
+        function goToTrivias() {
+            window.location.href = "trivias.html";
+        }
+
+       function goToformmativeformativesummativesumative() {
+            window.location.href = "formmativeformativesummativesumative.html";
         }
     </script>
 </body>
