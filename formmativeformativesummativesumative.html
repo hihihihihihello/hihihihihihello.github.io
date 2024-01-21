@@ -60,11 +60,18 @@
     <input type="checkbox" id="toggle" onchange="toggleBackground()">
 
     <h1>Formative</h1>
-    <h2>Formmative</h2>
-    <h1>Summative</h1>
-    <h2>Sumative</h2>
 
-    <button onclick="redirectToIndex()">Go to index.html</button>
+    <button onclick="redirectToIndex()">Go to home</button>
+
+    <h2>Formmative</h2>
+    
+    <button onclick="redirectToTriva()">Go to Trivia</button>
+    
+    <h1>Summative</h1>
+
+    <button onclick="redirectToAbout()">Go to About page</button>
+    
+    <h2>Sumative</h2>
 
     <script>
         function toggleBackground() {
@@ -73,9 +80,17 @@
         }
 
         function redirectToIndex() {
-            window.location.href = 'f.html';
+            window.location.href = 'index.html';
         }
 
+        function redirectToAbout() {
+            window.location.href = 'about.html';
+        }
+
+       function redirectToTriva() {
+            window.location.href = 'triva.html';
+        }
+        
         // Initialize particles.js
         particlesJS('particles-container', {
             particles: {
