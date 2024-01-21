@@ -11,7 +11,7 @@
             overflow: hidden;
             text-align: center;
             background-color: black;
-            color: white; /* Set the text color to white */
+            color: white;
         }
 
         h1 {
@@ -24,8 +24,8 @@
         }
 
         button {
-            display: inline-block;
-            margin: 0 10px;
+            display: block;
+            margin: 10px auto; /* Center the buttons horizontally */
             padding: 10px 20px;
             background-color: #3498db;
             color: #ecf0f1;
@@ -48,11 +48,11 @@
 <body>
     <h1>Trivia</h1>
 
+    <h2>Forms</h2>
+
     <button onclick="redirectToAppleTrivia()">Apple Trivia</button>
     <button onclick="backToHome()">Back to Home</button>
     <button onclick="window.location.href='trivas.html'">Go to Trivas Page</button>
-
-    <h2>Forms</h2>
 
     <script>
         function redirectToAppleTrivia() {
