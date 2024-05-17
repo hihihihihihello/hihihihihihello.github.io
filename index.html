@@ -6,52 +6,103 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>hi hello</title>
 
-    <!-- Add a button with the desired text and link -->
-    <button onclick="window.location.href='https://www.reddit.com/r/hellohihihihihi/s/bIAbnkVzX1'" style="color: white;">reddit</button>
+    <!-- Add the link to particles.js script -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     
-    <!---    <h1> mc multiplayer server webpages </h1>--->!
-    
-    <!-- Add a button with the desired text and link -->
-    <button onclick="window.location.href='ultimatedupz.tebex.io'" style="color: white;">ultimate dupz minecraft server</button>
-    
-    <!-- Add a button with the desired text and link -->
-    <button onclick="window.location.href='urlweblinkpagesitebrowseraddress.html'" style="color: white;">hi</button>
-    
-    <!-- Add the link to particles.js CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: black;
+            color: white;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 100%;
+            background-color: #333;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.3s ease;
+        }
+
+        .sidebar.hidden {
+            transform: translateX(-100%);
+        }
+
+        .toggle-btn {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            background-color: #444;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .spacer {
+            width: 100%;
+            height: 2px;
+            background-color: white;
+            margin: 20px 0;
+        }
+
+        .sidebar button {
+            color: white;
+            background-color: #444;
+            border: none;
+            padding: 10px;
+            margin: 10px 0;
+            cursor: pointer;
+        }
+    </style>
 </head>
 
-<body style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; background-color: black; color: white;">
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar hidden" id="sidebar">
+        <!-- Spacer Line -->
+        <div class="spacer"></div>
+        <!-- Auth Button -->
+        <button onclick="window.location.href='auth.html'">Auth</button>
+    </div>
+
+    <!-- Toggle Button -->
+    <button class="toggle-btn" id="toggle-btn">☰</button>
 
     <!-- Add a container for particles.js -->
-    <div id="particles-js"></div>
+    <div id="particles-js" style="position: absolute; width: 100%; height: 100%;"></div>
 
-    <h1 style="color: white;">hi</h1>
+    <h1>hi</h1>
     
-    <!-- Add a button with the desired text and link -->
+    <!-- Buttons with the desired text and links -->
+    <button onclick="window.location.href='https://www.reddit.com/r/hellohihihihihi/s/bIAbnkVzX1'" style="color: white;">reddit</button>
+    <button onclick="window.location.href='ultimatedupz.tebex.io'" style="color: white;">ultimate dupz minecraft server</button>
+    <button onclick="window.location.href='urlweblinkpagesitebrowseraddress.html'" style="color: white;">hi</button>
     <button onclick="window.location.href='triva.html'" style="color: white;">triva</button>
-
-    <h2 style="color: white;">hello</h2>
-
-  <h2>URL WEB LINK</h2>
-    
-    <!-- Add a button with the desired text and link -->
     <button onclick="window.location.href='about.html'" style="color: blue;">go to the about page</button>
-    
-    <!-- Add a button with the desired text and link -->
     <button onclick="window.location.href='privacypolicy.html'" style="color: white;">privacy policy</button>
-    
-    <!-- Add a button with the desired text and link -->
     <button onclick="window.location.href='terms.html'" style="color: black;">terms</button>
-
-    <!-- Add the script tag for particles.js -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <button onclick="window.location.href='https://github.com/hihihihihihello/hihihihihihello.github.io.wiki.git'" style="color: white;">GitHub Wiki</button>
+    <button onclick="window.location.href='stuff.html'" style="color: white;">stuff</button>
+    <button onclick="window.location.href='tutorialsthatihaveusedforthis.html'" style="color: white;">tutorials that i have used for this</button>
+    <button onclick="window.location.href='https://www.peadrew.tk/'" style="color: white;">The Peadrew Project</button>
+    <button onclick="window.location.href='https://guides.peadrew.tk/'" style="color: white;">Peadrew Guides</button>
 
     <!-- Initialize particles.js with your custom configuration -->
     <script>
         particlesJS("particles-js", {
             "particles": {
-                // Customize particle settings as needed
                 "number": {
                     "value": 80,
                     "density": {
@@ -62,7 +113,44 @@
                 "color": {
                     "value": "#ffffff"
                 },
-                // Add more particle settings as needed
+                "shape": {
+                    "type": "circle"
+                },
+                "opacity": {
+                    "value": 0.5
+                },
+                "size": {
+                    "value": 3
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#ffffff",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 6,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "repulse"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    }
+                }
             }
         });
     </script>
@@ -70,19 +158,21 @@
     <!-- Firebase initialization script -->
     <script type="module">
         // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-analytics.js";
-        
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
         // Your web app's Firebase configuration
         // For Firebase JS SDK v7.20.0 and later, measurementId is optional
         const firebaseConfig = {
-            apiKey: "AIzaSyBGaCBZF0Ks34Ij8ohTAv1p27Btu-6g05g",
-            authDomain: "hihihihihihello.firebaseapp.com",
-            projectId: "hihihihihihello",
-            storageBucket: "hihihihihihello.appspot.com",
-            messagingSenderId: "604401827955",
-            appId: "1:604401827955:web:5ab7644983e0ff5f7a6a06",
-            measurementId: "G-99H3BZZX0K"
+            apiKey: "AIzaSyD5NsTGKSUth8yYReFA7qo1rs9JTWnEHBg",
+            authDomain: "hihihihihihello-b9cf5.firebaseapp.com",
+            projectId: "hihihihihihello-b9cf5",
+            storageBucket: "hihihihihihello-b9cf5.appspot.com",
+            messagingSenderId: "466718270281",
+            appId: "1:466718270281:web:323f5eedfcb53292763098",
+            measurementId: "G-6R7K6TQQ15"
         };
 
         // Initialize Firebase
@@ -90,53 +180,40 @@
         const analytics = getAnalytics(app);
     </script>
 
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3709021518497874"
-        crossorigin="anonymous"></script>
-        
-    <!-- Add a button with the desired text and link -->
-    <button onclick="window.location.href='https://github.com/hihihihihihello/hihihihihihello.github.io.wiki.git'" style="color: white;">GitHub Wiki</button>
+    <!-- Google AdSense script -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3709021518497874" crossorigin="anonymous"></script>
     
-    <!-- Add a button with the desired text and link -->
-    <button onclick="window.location.href='stuff.html'" style="color: white;">stuff</button>
+    <!-- Script to adjust text and button colors based on background -->
+    <script>
+        function isLight(color) {
+            const rgb = color.match(/\d+/g);
+            const brightness = (rgb[0] * 299 + rgb[1] * 587 + rgb[2] * 114) / 1000;
+            return brightness > 128;
+        }
 
-    <!-- Add a button with the desired text and link -->
-    <button onclick="window.location.href='tutorialsthatihaveusedforthis.html'" style="color: white;">tutorials that i have used for this</button>
-    
-    <!-- Add a button with the desired text and link -->
-    <button onclick="window.location.href='https://www.peadrew.tk/'" style="color: white;">The Peadrew Project</button>
-    
-    <!-- Add a button with the desired text and link -->
-    <button onclick="window.location.href='https://guides.peadrew.tk/'" style="color: white;">Peadrew Guides</button>
-    
-<script>
-    // Function to determine if a color is light or dark
-    function isLight(color) {
-        const rgb = color.match(/\d+/g);
-        const brightness = (rgb[0] * 299 + rgb[1] * 587 + rgb[2] * 114) / 1000;
-        return brightness > 128; // You can adjust this threshold as needed
-    }
+        function updateColors() {
+            const body = document.body;
+            const textColor = isLight(getComputedStyle(body).backgroundColor) ? 'black' : 'white';
+            document.querySelectorAll('[style*="color: white;"]').forEach(element => {
+                element.style.color = textColor;
+            });
+            document.querySelectorAll('button').forEach(button => {
+                button.style.color = textColor;
+            });
+        }
 
-    // Function to set text and button colors based on background
-    function updateColors() {
-        const body = document.body;
-        const textColor = isLight(getComputedStyle(body).backgroundColor) ? 'black' : 'white';
-        const buttonColor = textColor === 'white' ? 'black' : 'white';
+        document.addEventListener('DOMContentLoaded', updateColors);
+    </script>
 
-        // Set text color for all elements with inline styles
-        document.querySelectorAll('[style*="color: white;"]').forEach(element => {
-            element.style.color = textColor;
+    <!-- Script for sidebar toggle functionality -->
+    <script>
+        const toggleBtn = document.getElementById('toggle-btn');
+        const sidebar = document.getElementById('sidebar');
+
+        toggleBtn.addEventListener('click', () => {
+            sidebar.classList.toggle('hidden');
         });
-
-        // Set button color for all buttons
-        document.querySelectorAll('button').forEach(button => {
-            button.style.color = buttonColor;
-        });
-    }
-
-    // Call the updateColors function when the DOM is loaded
-    document.addEventListener('DOMContentLoaded', updateColors);
-</script>
-
+    </script>
 </body>
 
 </html>
