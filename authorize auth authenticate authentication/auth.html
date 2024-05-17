@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auth</title>
+    <style>
+        .button {
+            font-size: 15px;
+            color: white;
+            background-color: black;
+            border: 1px solid gray;
+            border-radius: 15px;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px 0;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button class="button" onclick="window.location.href='index.html'">Back</button>
+    <button class="button" onclick="signIn()">Sign In</button>
+    <button class="button" onclick="signUp()">Sign Up</button>
+
+    <script>
+        function signIn() {
+            // Firebase authentication sign-in logic here
+            alert('Sign In button clicked'); // Placeholder
+        }
+
+        function signUp() {
+            // Firebase authentication sign-up logic here
+            alert('Sign Up button clicked'); // Placeholder
+        }
+    </script>
+</body>
+</html>
