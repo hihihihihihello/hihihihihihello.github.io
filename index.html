@@ -104,7 +104,7 @@
     <button class="toggle-btn" id="toggle-btn">☰</button>
 
     <!-- Add a container for particles.js -->
-    <div id="particles-js" style="position: absolute; width: 100%; height: 100%;"></div>
+    <div id="particles-js" style="position: absolute; width: 100%; height: 100%; display: none;"></div>
 
     <h1>hi</h1>
     
@@ -124,66 +124,69 @@
 
     <!-- Initialize particles.js with your custom configuration -->
     <script>
-        particlesJS("particles-js", {
-            "particles": {
-                "number": {
-                    "value": 80,
-                    "density": {
-                        "enable": true,
-                        "value_area": 800
-                    }
-                },
-                "color": {
-                    "value": "#ffffff"
-                },
-                "shape": {
-                    "type": "circle"
-                },
-                "opacity": {
-                    "value": 0.5
-                },
-                "size": {
-                    "value": 3
-                },
-                "line_linked": {
-                    "enable": true,
-                    "distance": 150,
-                    "color": "#ffffff",
-                    "opacity": 0.4,
-                    "width": 1
-                },
-                "move": {
-                    "enable": true,
-                    "speed": 6,
-                    "direction": "none",
-                    "random": false,
-                    "straight": false,
-                    "out_mode": "out",
-                    "bounce": false
-                }
-            },
-            "interactivity": {
-                "detect_on": "canvas",
-                "events": {
-                    "onhover": {
-                        "enable": true,
-                        "mode": "repulse"
-                    },
-                    "onclick": {
-                        "enable": true,
-                        "mode": "push"
-                    }
-                }
-            }
-        });
-
-        // Toggle Particles.js
-        let particlesEnabled = true;
+        let particlesEnabled = false;
         const particlesToggleBtn = document.getElementById('particles-toggle-btn');
 
         particlesToggleBtn.addEventListener('click', () => {
             particlesEnabled = !particlesEnabled;
-            document.getElementById('particles-js').style.display = particlesEnabled ? 'block' : 'none';
+            const particlesContainer = document.getElementById('particles-js');
+            if (particlesEnabled) {
+                particlesContainer.style.display = 'block';
+                particlesJS("particles-js", {
+                    "particles": {
+                        "number": {
+                            "value": 80,
+                            "density": {
+                                "enable": true,
+                                "value_area": 800
+                            }
+                        },
+                        "color": {
+                            "value": "#ffffff"
+                        },
+                        "shape": {
+                            "type": "circle"
+                        },
+                        "opacity": {
+                            "value": 0.5
+                        },
+                        "size": {
+                            "value": 3
+                        },
+                        "line_linked": {
+                            "enable": true,
+                            "distance": 150,
+                            "color": "#ffffff",
+                            "opacity": 0.4,
+                            "width": 1
+                        },
+                        "move": {
+                            "enable": true,
+                            "speed": 6,
+                            "direction": "none",
+                            "random": false,
+                            "straight": false,
+                            "out_mode": "out",
+                            "bounce": false
+                        }
+                    },
+                    "interactivity": {
+                        "detect_on": "canvas",
+                        "events": {
+                            "onhover": {
+                                "enable": true,
+                                "mode": "repulse"
+                            },
+                            "onclick": {
+                                "enable": true,
+                                "mode": "push"
+                            }
+                        }
+                    }
+                });
+            } else {
+                particlesContainer.style.display = 'none';
+            }
         });
     </script>
 
