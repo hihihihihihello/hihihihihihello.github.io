@@ -21,5 +21,5 @@ welcome
 > [!NOTE]
 > back welcome
 
-> [!TIPO]
+> [!TIP]
 > welcome back
