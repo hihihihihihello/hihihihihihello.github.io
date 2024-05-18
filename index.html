@@ -50,13 +50,6 @@
             cursor: pointer;
         }
 
-        .spacer {
-            width: 100%;
-            height: 2px;
-            background-color: white;
-            margin: 20px 0;
-        }
-
         .sidebar button {
             color: white;
             background-color: #444;
@@ -65,19 +58,49 @@
             margin: 10px 0;
             cursor: pointer;
         }
+
+        .spacer {
+            width: 100%;
+            height: 2px;
+            background-color: white;
+            margin: 20px 0;
+        }
+
+        .dropdown {
+            width: 100%;
+        }
+
+        .dropdown-content {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: flex;
+        }
     </style>
 </head>
 
 <body>
     <!-- Sidebar -->
     <div class="sidebar hidden" id="sidebar">
+        <!-- Toggle Particles.js Button -->
+        <button id="particles-toggle-btn">Toggle Particles.js</button>
         <!-- Spacer Line -->
         <div class="spacer"></div>
+        <!-- Dropdown Menu -->
+        <div class="dropdown">
+            <button class="sidebar button">Prefer</button>
+            <div class="dropdown-content">
+                <button onclick="window.location.href='preferences.html'">Preferences</button>
+            </div>
+        </div>
         <!-- Auth Button -->
         <button onclick="window.location.href='auth.html'">Auth</button>
     </div>
 
-    <!-- Toggle Button -->
+    <!-- Toggle Sidebar Button -->
     <button class="toggle-btn" id="toggle-btn">☰</button>
 
     <!-- Add a container for particles.js -->
@@ -152,6 +175,15 @@
                     }
                 }
             }
+        });
+
+        // Toggle Particles.js
+        let particlesEnabled = true;
+        const particlesToggleBtn = document.getElementById('particles-toggle-btn');
+
+        particlesToggleBtn.addEventListener('click', () => {
+            particlesEnabled = !particlesEnabled;
+            document.getElementById('particles-js').style.display = particlesEnabled ? 'block' : 'none';
         });
     </script>
 
