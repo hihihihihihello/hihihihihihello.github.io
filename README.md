@@ -18,7 +18,8 @@ hello hello hello hello hello
 
 welcome
 
-> [1back]
+> [!NOTE]
 > back welcome
 
-welcome back
+> [!TIPO]
+> welcome back
