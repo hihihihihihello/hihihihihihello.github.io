@@ -19,6 +19,8 @@
             margin: 0;
             background-color: black;
             color: white;
+            font-family: Arial, sans-serif;
+            transition: background-color 0.3s;
         }
 
         .sidebar {
@@ -59,6 +61,17 @@
             cursor: pointer;
         }
 
+        button:not(.sidebar button) {
+            color: black;
+            background-color: #ccc;
+            border: none;
+            padding: 10px;
+            margin: 10px 0;
+            cursor: pointer;
+            border-radius: 10px;
+            font-family: Arial, sans-serif;
+        }
+
         .spacer {
             width: 100%;
             height: 2px;
@@ -76,8 +89,12 @@
             align-items: center;
         }
 
-        .dropdown:hover .dropdown-content {
+        .dropdown.active .dropdown-content {
             display: flex;
+        }
+
+        .color-picker {
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -90,14 +107,16 @@
         <!-- Spacer Line -->
         <div class="spacer"></div>
         <!-- Dropdown Menu -->
-        <div class="dropdown">
-            <button class="sidebar button">Prefer</button>
+        <div class="dropdown" id="dropdown">
+            <button class="sidebar button" id="dropdown-toggle">Prefer ▼</button>
             <div class="dropdown-content">
                 <button onclick="window.location.href='preferences.html'">Preferences</button>
             </div>
         </div>
         <!-- Auth Button -->
         <button onclick="window.location.href='auth.html'">Auth</button>
+        <!-- Color Picker -->
+        <input type="color" id="color-picker" class="color-picker" value="#000000">
     </div>
 
     <!-- Toggle Sidebar Button -->
@@ -109,18 +128,18 @@
     <h1>hi</h1>
     
     <!-- Buttons with the desired text and links -->
-    <button onclick="window.location.href='https://www.reddit.com/r/hellohihihihihi/s/bIAbnkVzX1'" style="color: white;">reddit</button>
-    <button onclick="window.location.href='ultimatedupz.tebex.io'" style="color: white;">ultimate dupz minecraft server</button>
-    <button onclick="window.location.href='urlweblinkpagesitebrowseraddress.html'" style="color: white;">hi</button>
-    <button onclick="window.location.href='triva.html'" style="color: white;">triva</button>
-    <button onclick="window.location.href='about.html'" style="color: blue;">go to the about page</button>
-    <button onclick="window.location.href='privacypolicy.html'" style="color: white;">privacy policy</button>
-    <button onclick="window.location.href='terms.html'" style="color: black;">terms</button>
-    <button onclick="window.location.href='https://github.com/hihihihihihello/hihihihihihello.github.io.wiki.git'" style="color: white;">GitHub Wiki</button>
-    <button onclick="window.location.href='stuff.html'" style="color: white;">stuff</button>
-    <button onclick="window.location.href='tutorialsthatihaveusedforthis.html'" style="color: white;">tutorials that i have used for this</button>
-    <button onclick="window.location.href='https://www.peadrew.tk/'" style="color: white;">The Peadrew Project</button>
-    <button onclick="window.location.href='https://guides.peadrew.tk/'" style="color: white;">Peadrew Guides</button>
+    <button onclick="window.location.href='https://www.reddit.com/r/hellohihihihihi/s/bIAbnkVzX1'">reddit</button>
+    <button onclick="window.location.href='ultimatedupz.tebex.io'">ultimate dupz minecraft server</button>
+    <button onclick="window.location.href='urlweblinkpagesitebrowseraddress.html'">hi</button>
+    <button onclick="window.location.href='triva.html'">triva</button>
+    <button onclick="window.location.href='about.html'">go to the about page</button>
+    <button onclick="window.location.href='privacypolicy.html'">privacy policy</button>
+    <button onclick="window.location.href='terms.html'">terms</button>
+    <button onclick="window.location.href='https://github.com/hihihihihihello/hihihihihihello.github.io.wiki.git'">GitHub Wiki</button>
+    <button onclick="window.location.href='stuff.html'">stuff</button>
+    <button onclick="window.location.href='tutorialsthatihaveusedforthis.html'">tutorials that i have used for this</button>
+    <button onclick="window.location.href='https://www.peadrew.tk/'">The Peadrew Project</button>
+    <button onclick="window.location.href='https://guides.peadrew.tk/'">Peadrew Guides</button>
 
     <!-- Initialize particles.js with your custom configuration -->
     <script>
@@ -188,6 +207,18 @@
                 particlesContainer.style.display = 'none';
             }
         });
+
+        const dropdownToggleBtn = document.getElementById('dropdown-toggle');
+        const dropdown = document.getElementById('dropdown');
+
+        dropdownToggleBtn.addEventListener('click', () => {
+            dropdown.classList.toggle('active');
+        });
+
+        const colorPicker = document.getElementById('color-picker');
+        colorPicker.addEventListener('input', (event) => {
+            document.body.style.backgroundColor = event.target.value;
+        });
     </script>
 
     <!-- Firebase initialization script -->
@@ -223,25 +254,25 @@
         function isLight(color) {
             const rgb = color.match(/\d+/g);
             const brightness = (rgb[0] * 299 + rgb[1] * 587 + rgb[2] * 114) / 1000;
-            return brightness > 128;
+            return brightness > 128; // You can adjust this threshold as needed
         }
 
         function updateColors() {
             const body = document.body;
             const textColor = isLight(getComputedStyle(body).backgroundColor) ? 'black' : 'white';
+            const buttonColor = textColor === 'white' ? 'black' : 'white';
+
+            document.querySelectorAll('button:not(.sidebar button)').forEach(button => {
+                button.style.color = buttonColor;
+            });
+
             document.querySelectorAll('[style*="color: white;"]').forEach(element => {
                 element.style.color = textColor;
-            });
-            document.querySelectorAll('button').forEach(button => {
-                button.style.color = textColor;
             });
         }
 
         document.addEventListener('DOMContentLoaded', updateColors);
-    </script>
 
-    <!-- Script for sidebar toggle functionality -->
-    <script>
         const toggleBtn = document.getElementById('toggle-btn');
         const sidebar = document.getElementById('sidebar');
 
