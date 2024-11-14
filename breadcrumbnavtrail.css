@@ -1,0 +1,24 @@
+.breadcrumb {
+  list-style: none;
+  display: flex;
+}
+
+.breadcrumb li {
+  margin-right: 0.5em;
+}
+
+.breadcrumb li + li::before {
+  content: ">";
+  margin-right: 0.5em;
+  color: #333;
+}
+
+.breadcrumb a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.breadcrumb li[aria-current="page"] {
+  color: #555;
+  font-weight: bold;
+}
